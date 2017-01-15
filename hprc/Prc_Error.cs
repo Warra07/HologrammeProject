@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace hprc
             this.oDs.Clear();
 
             this.rq_sql = this.oMap.selectAllError();
-            this.oDs = this.oCad.getRows(this.rq_sql, "ALL");
+            this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
 
             return this.oDs;
         }
@@ -37,7 +38,7 @@ namespace hprc
             this.oDs.Clear();
 
             this.rq_sql = this.oMap.selectAllErrorType();
-            this.oDs = this.oCad.getRows(this.rq_sql, "ALL");
+            this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
 
             return this.oDs;
         }
@@ -74,12 +75,18 @@ namespace hprc
         public void errorUpdate(int id, int code, string erreur, string solution, int idtype)
         {
             this.oDs.Clear();
+            this.oMap.setID(id);
             this.oMap.setCode(code);
             this.oMap.setError(erreur);
             this.oMap.setSolution(solution);
             this.oMap.setIdtype(idtype);
 
+
+
             this.rq_sql = this.oMap.errorUpdate();
+
+            Debug.Write(this.rq_sql);
+
             this.oCad.actionRows(this.rq_sql);
         }
 

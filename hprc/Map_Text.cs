@@ -14,19 +14,18 @@ namespace hprc
         private string titre;
         private string texte;
         private Map_Text() { }
+
+
         public string selectAll()
         {
             this.rq_sql =
-                          "SELECT [id]" +
-                          ",[titre]" +
-                          ",[texte] " +
-                          "FROM [Texte]";
+                          "SELECT id ,titre, texte FROM Texte";
             return this.rq_sql;
         }
 
-        public string selectByTitle()
+        public string selectByTitle(string titre)
         {
-            this.rq_sql = "SELECT id, titre, texte FROM Texte WHERE (titre = '" + this.titre + "')";
+            this.rq_sql = "SELECT id, titre, texte FROM Texte WHERE (titre = '" + titre + "')";
             return this.rq_sql;
         }
 

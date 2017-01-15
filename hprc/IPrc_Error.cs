@@ -13,6 +13,7 @@ namespace hprc
         System.Data.DataSet afficherErrorType(string dataTableName);
 
         void errorTypeInsert(string type);
+
         void deleteErrorById(int id);
         void errorInsert(int code, string erreur, string solution, int idtype);
         void errorUpdate(int id, int code, string erreur, string solution, int idtype);

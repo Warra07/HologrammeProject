@@ -68,7 +68,7 @@ namespace hprc
 
         public string errorUpdate()
         {
-            this.rq_sql = "UPDATE Erreur SET code = '" + this.code + "', erreur = '" + this.error + "' , solution = '" + this.solution + "', IdType = '" + this.idtype + "' WHERE id = " + this.id + ";";
+            this.rq_sql = "UPDATE Erreur SET code = '" + this.code + "', erreur = '" + this.error + "' , solution = '" + this.solution + "', IdType = '" + this.idtype + "' WHERE ( id = " + this.id + ");";
             return this.rq_sql;
         }
 

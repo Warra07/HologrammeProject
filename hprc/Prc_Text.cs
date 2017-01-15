@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Data;
 
 namespace hprc
 {
-   class Prc_Text : IPrc_Text
+   public class Prc_Text : IPrc_Text
     {
         private System.Data.DataSet oDs;
         private Map_Text oMap;
@@ -26,7 +28,7 @@ namespace hprc
             this.oDs.Clear();
 
             this.rq_sql = this.oMap.selectAll();
-            this.oDs = this.oCad.getRows(this.rq_sql, "ALL");
+            this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
 
             return this.oDs;
         }
@@ -34,11 +36,12 @@ namespace hprc
         public System.Data.DataSet RechercherTitre(string dataTableName, string titre)
         {
             this.oDs.Clear();
-
             this.oMap.setTitre(titre);
-            this.rq_sql = this.oMap.selectByTitle();
-            this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
 
+            this.rq_sql = this.oMap.selectByTitle(titre);
+            this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
+           
+         
             return this.oDs;
         }
 
