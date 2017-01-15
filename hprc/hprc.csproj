@@ -7,8 +7,8 @@
     <ProjectGuid>{7DE365DE-17F1-4B1E-B7D4-50ED18D74C7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hprc</RootNamespace>
-    <AssemblyName>hprc</AssemblyName>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>dll</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
