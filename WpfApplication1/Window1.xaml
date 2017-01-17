@@ -90,6 +90,46 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Margin="11,345,0,336.6" RenderTransformOrigin="0.5,0.5" MediaEnded="myGif_MediaEnded">
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="809.604"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
+        <MediaElement x:Name="mediaElement_Copy" HorizontalAlignment="Right" Height="100" VerticalAlignment="Center" Width="100" Margin="0,341,12.4,340.6" RenderTransformOrigin="0.5,0.5" MediaEnded="myGif_MediaEnded">
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="450.385"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
+        <MediaElement x:Name="mediaElement_Copy1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Bottom" Width="100" Margin="372,0,366.4,14.6" RenderTransformOrigin="0.5,0.5" MediaEnded="myGif_MediaEnded">
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="899.31"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
+        <MediaElement x:Name="mediaElement_Copy2" HorizontalAlignment="Center" Height="100" Width="100" Margin="373,18,365.4,0" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" MediaEnded="myGif_MediaEnded">
+            <MediaElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="540.058"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </MediaElement.RenderTransform>
+        </MediaElement>
 
     </Grid>
 </Window>

@@ -17,6 +17,7 @@ using System.Data;
 using System.Collections;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.IO;
 
 namespace WpfApplication1
 {
@@ -141,11 +142,16 @@ namespace WpfApplication1
 
         private void importer_Click(object sender, RoutedEventArgs e)
         {
-            MyWipedText.Visibility = Visibility.Hidden;
             openfile.ShowDialog();
-           mainimage.Source = new BitmapImage(new Uri(openfile.FileName));
-            diffusion.showimages(openfile.FileName);
+            if (System.IO.Path.GetExtension(openfile.FileName) == ".gif" || System.IO.Path.GetExtension(openfile.FileName) == ".jpg" || System.IO.Path.GetExtension(openfile.FileName) == ".jpeg" || System.IO.Path.GetExtension(openfile.FileName) == ".png" || System.IO.Path.GetExtension(openfile.FileName) == ".bmp")
+            {
+                mainimage.Source = new BitmapImage(new Uri(openfile.FileName));
+
+                MyWipedText.Visibility = Visibility.Hidden;
+                diffusion.showimages(openfile.FileName);
+            
             mainimage.Visibility = Visibility.Visible;
+            }
         }
     }
 }

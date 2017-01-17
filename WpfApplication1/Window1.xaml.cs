@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,7 @@ namespace WpfApplication1
     {
 
         BitmapImage image2;
+        Uri uri;
 
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
@@ -46,10 +48,18 @@ namespace WpfApplication1
          */
         public void ModifierTexte(string texte)
         {
+  
+            this.mediaElement.Source = new Uri("C:/users/wacim/Desktop/save/source.gif");
             this.image.Visibility = Visibility.Hidden;
             this.image_Copy.Visibility = Visibility.Hidden;
             this.image_Copy1.Visibility = Visibility.Hidden;
             this.image_Copy2.Visibility = Visibility.Hidden;
+
+            this.mediaElement.Visibility = Visibility.Hidden;
+            this.mediaElement_Copy.Visibility = Visibility.Hidden;
+            this.mediaElement_Copy1.Visibility = Visibility.Hidden;
+            this.mediaElement_Copy2.Visibility = Visibility.Hidden;
+
             textBlock.Visibility = Visibility.Visible;
             textBlock1.Visibility = Visibility.Visible;
             textBlock2.Visibility = Visibility.Visible;
@@ -76,20 +86,64 @@ namespace WpfApplication1
 
         internal void showimages(string fileName)
         {
-            this.image.Visibility = Visibility.Visible;
-            this.image_Copy.Visibility = Visibility.Visible;
-            this.image_Copy1.Visibility = Visibility.Visible;
-            this.image_Copy2.Visibility = Visibility.Visible;
+      
+
             textBlock.Visibility = Visibility.Hidden;
             textBlock1.Visibility = Visibility.Hidden;
             textBlock2.Visibility = Visibility.Hidden;
             textBlock3.Visibility = Visibility.Hidden;
 
-            image2 = new BitmapImage(new Uri(fileName));
-            this.image.Source = image2;
-            this.image_Copy.Source = image2;
-            this.image_Copy1.Source = image2;
-            this.image_Copy2.Source = image2;
+            if (System.IO.Path.GetExtension(fileName) == ".gif")
+            {
+                uri = new Uri(fileName);
+                this.mediaElement.Visibility = Visibility.Visible;
+                this.mediaElement_Copy.Visibility = Visibility.Visible;
+                this.mediaElement_Copy1.Visibility = Visibility.Visible;
+                this.mediaElement_Copy2.Visibility = Visibility.Visible;
+
+                this.image.Visibility = Visibility.Hidden;
+                this.image_Copy.Visibility = Visibility.Hidden;
+                this.image_Copy1.Visibility = Visibility.Hidden;
+                this.image_Copy2.Visibility = Visibility.Hidden;
+
+
+                this.mediaElement.Source = uri;
+               this.mediaElement_Copy.Source = uri;
+                this.mediaElement_Copy1.Source = uri;
+                this.mediaElement_Copy2.Source = uri;
+            }
+            else
+            {
+                this.mediaElement.Visibility = Visibility.Hidden;
+                this.mediaElement_Copy.Visibility = Visibility.Hidden;
+                this.mediaElement_Copy1.Visibility = Visibility.Hidden;
+                this.mediaElement_Copy2.Visibility = Visibility.Hidden;
+
+                this.image.Visibility = Visibility.Visible;
+                this.image_Copy.Visibility = Visibility.Visible;
+                this.image_Copy1.Visibility = Visibility.Visible;
+                this.image_Copy2.Visibility = Visibility.Visible;
+
+                image2 = new BitmapImage(new Uri(fileName));
+                this.image.Source = image2;
+                this.image_Copy.Source = image2;
+                this.image_Copy1.Source = image2;
+                this.image_Copy2.Source = image2;
+            }
+        }
+        private void myGif_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            this.mediaElement.Position = new TimeSpan(0, 0, 1);
+            this.mediaElement.Play();
+
+            this.mediaElement_Copy.Position = new TimeSpan(0, 0, 1);
+            this.mediaElement_Copy.Play();
+
+            this.mediaElement_Copy1.Position = new TimeSpan(0, 0, 1);
+            this.mediaElement_Copy1.Play();
+
+            this.mediaElement_Copy2.Position = new TimeSpan(0, 0, 1);
+            this.mediaElement_Copy2.Play();
         }
     }
 }
