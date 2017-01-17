@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace hprc
 {
+    /* COUCHE PROCESSUS
+    * Classe de mappage Texte, contenant des methodes renvoyant les differentes requetes SQL
+    * à utiliser en Bdd, cette classe compose la classe processus de meme genre
+    * Les methodes possédent des noms explicite exprimant leurs utilité
+    */
     class Map_Text
     {
         private static Map_Text maptext = new Map_Text();
@@ -46,6 +51,7 @@ namespace hprc
             this.rq_sql = "UPDATE Texte SET titre = '" + this.titre + "', texte = '" + this.texte + "' WHERE id = " + this.id + ";";
             return this.rq_sql;
         }
+
         public static Map_Text getInstance()
         {
             return maptext;

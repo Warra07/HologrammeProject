@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace hprc
 {
+    /* COUCHE PROCESSUS
+    * Classe du processus Erreur, Processus contenant des methodes de gestion des
+    * tableaux Erreur et Type, se référer à l'interface pour la description des methodes
+    */
     class Prc_Error : IPrc_Error
     {
         private System.Data.DataSet oDs;
@@ -99,5 +103,17 @@ namespace hprc
             this.oDs = this.oCad.getRows(this.rq_sql, dataTableName);
             return this.oDs;
         }
+
+        public DataSet getErrorLine(string dataTableName)
+        {
+            this.oDs.Clear();
+
+            this.rq_sql = this.oMap.getErrorLine();
+            this.oDs = this.oCad.getRows(rq_sql, dataTableName);
+
+            return this.oDs;
+        }
+
+
     }
 }

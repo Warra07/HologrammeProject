@@ -9,6 +9,13 @@ namespace hprc
 {
     namespace Metier
     {
+
+        /*  COUCHE Acces aux données
+         * Classe de connexion et d'envoie de quéte à la base de donnée
+         * Cette Classe utilise un design Pattern singleton afin d'eviter de créer des objets inutile
+         * l'instantiation se fait grace à la methode getInstance()
+         * se référer à l'interface implementant les methodes de la couche metier afin d'etudier leurs fonctionnement
+         */
         class Work : IWork
         {
             private static IWork work = new Work();
@@ -21,7 +28,7 @@ namespace hprc
 
             private Work()
             {
-                this.cnx = @"Data Source=WARRA07;Initial Catalog=holoProject;Integrated Security=True";
+                this.cnx = @"Data Source =(LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\wacim\documents\visual studio 2015\Projects\hprc\hprc\holoProject.mdf; Integrated Security = True";
 
                 this.rq_sql = "NC";
                 this.oCnx = new System.Data.SqlClient.SqlConnection(this.cnx);
@@ -51,6 +58,8 @@ namespace hprc
 
                 return this.oDs;
             }
+
+            /* Methode retournant un singleton de la classe Work */
             public static IWork getInstance()
             {
                 return work;

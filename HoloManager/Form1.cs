@@ -14,22 +14,28 @@ namespace HoloManager
 {
     public partial class Form1 : Form
     {   
+        //Processus Texte
         private IPrc_Text oPcs;
+        //Processus Error
         private IPrc_Error oPce;
+        //DataSet qui contient la reponse aux requetes de selection
         private System.Data.DataSet oDs;
+        //nom de la table qui sera stocké au niveu du DataSet
         private string dataTableName;
+        //Classe de binding de l'onglet Texte
         private BindingSource oBs;
+        //Classe de binding de l'onglet Erreur
         private BindingSource oBe;
+        //Classe de binding de l'onglet type
         private BindingSource oBt;
         int a = 0;
 
-        public Form1()
-        {
-            
-            InitializeComponent();
-        }
+        public Form1()  {InitializeComponent();}
 
 
+        /* Initialisation des classe d'accés à la base de données, ainsi que la liaison des composants de type grilles
+         * au differentes classes de binding sur lequels les traitement seront effectué
+         */
         private void Form1_Load(object sender, EventArgs e)
         {
             this.oPcs = (IPrc_Text)PrcFactory.getProcess("texte");
@@ -47,12 +53,30 @@ namespace HoloManager
         }
 
 
+
+        /*
+         * Event bouton de chargement du tableau Texte
+         */
         private void button5_Click(object sender, EventArgs e)
         {
-
             this.charger();
         }
 
+        /*
+        * Methode de chargement du tableau Texte, récupére les données à partir de la base de donnée
+        */
+        public void charger()
+        {
+            this.oDs.Tables.Clear();
+            this.dataTableName = "ALL";
+            this.oPcs = (IPrc_Text)PrcFactory.getProcess("texte");
+            this.oDs = this.oPcs.afficher(this.dataTableName);
+            oBs.DataSource = this.oDs.Tables["ALL"];
+        }
+
+        /*
+         * Bouton de suppression d'une ligne du tableau texte
+         */
         private void button3_Click(object sender, EventArgs e)
         {
             if (this.deleteIdBox.Text != "")
@@ -64,6 +88,10 @@ namespace HoloManager
             }
         }
 
+
+        /*
+         * bouton d'ajout d'une ligne du tableau Texte
+         */
            private void button2_Click(object sender, EventArgs e)
         {
                if(texteBox.Text != "" && titleBox.Text != "")
@@ -76,6 +104,10 @@ namespace HoloManager
             }
         }
 
+
+        /*
+         * bouton d'update d'une ligne du tableau texte
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             if (idBox.Text != "" && texteBox.Text != "" && titleBox.Text != "")
@@ -88,6 +120,10 @@ namespace HoloManager
             }
         }
 
+
+        /*
+         * bouton de recherche d'une ligne du tableau Texte selon le titre
+         */
         private void button4_Click(object sender, EventArgs e)
         {
             if (searchTitleBox.Text != "")
@@ -104,14 +140,10 @@ namespace HoloManager
         }
 
 
-        public void charger()
-        {
-            this.oDs.Tables.Clear();
-            this.dataTableName = "ALL";
-            this.oPcs = (IPrc_Text)PrcFactory.getProcess("texte");
-            this.oDs = this.oPcs.afficher(this.dataTableName);
-            oBs.DataSource = this.oDs.Tables["ALL"];
-        }
+
+        /*
+         * Methode de chargement du tableau Erreur, récupére les données à partir de la base de donnée
+         */
         public void chargerError()
         {
             this.oDs.Tables.Clear();
@@ -120,6 +152,11 @@ namespace HoloManager
             this.oDs = this.oPce.afficherError(dataTableName);
             oBe.DataSource = this.oDs.Tables["ALLError"];
         }
+
+
+        /*
+         * Methode de chargement du tableau Type, récupére les données à partir de la base de donnée
+         */
         public void chargerType()
         {
             this.oDs.Clear();
@@ -129,6 +166,11 @@ namespace HoloManager
             oBt.DataSource = this.oDs.Tables["ALLType"];
         }
 
+
+
+        /*
+         * Methode d'ajout d'un type d'erreur ( bouton d'ajout )
+         */
         private void button11_Click(object sender, EventArgs e)
         {
             if ( typeBox.Text != "")
@@ -141,11 +183,21 @@ namespace HoloManager
             }
         }
 
+
+
+        /*
+         * bouton de chargement du tableau Type
+         */
         private void button12_Click(object sender, EventArgs e)
         {
             this.chargerType();
         }
 
+
+
+        /*
+         * bouton update du tableau d'erreur
+         */
         private void button7_Click(object sender, EventArgs e)
         {
             if (iderrorBox.Text != "" &&  errorBox.Text != "" && solutionBox.Text != "" && codeBox.Text != "" && idtBox.Text != "")
@@ -162,6 +214,10 @@ namespace HoloManager
             }
         }
 
+
+        /*
+         * bouton d'insertion du tableau erreur
+         */
         private void button6_Click(object sender, EventArgs e)
         {
             if ( errorBox.Text != "" && solutionBox.Text != "" && codeBox.Text != "" && idtBox.Text != "")
@@ -178,6 +234,10 @@ namespace HoloManager
             }
         }
 
+
+        /*
+         * bouton de recherche du tableau d'erreur selon le code d'erreur
+         */
         private void button9_Click(object sender, EventArgs e)
         {
             if (searchcodeBox.Text != "")
@@ -193,10 +253,21 @@ namespace HoloManager
             }
         }
 
+
+
+        /*
+         * bouton de chargement du tableau erreur
+         */
         private void button8_Click(object sender, EventArgs e)
         {
             this.chargerError();
         }
+
+
+        /*
+         * bouton de suppression d'une ligne du tableau d'erreur
+         */
+
 
         private void button10_Click(object sender, EventArgs e)
         {

@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace hprc
 {
+
+    /* COUCHE PROCESSUS
+   * Classe de mappage Error, contenant des methodes renvoyant les differentes requetes SQL
+   * à utiliser en Bdd pour le tableau Error et Type, cette classe compose la classe processus de meme genre
+   * Les methodes possédent des noms explicite exprimant leurs utilité
+   */
     class Map_Error
     {
         private static Map_Error maperror = new Map_Error();
@@ -26,9 +32,9 @@ namespace hprc
                           ",[code]" +
                           ",[erreur] " +
                           ",[solution] " +
-                          ",[Type] " +
+                          ",[IdType] " +
                           ",[iserror] " +
-                          "FROM [Erreur], [Type]";
+                          "FROM [Erreur]";
             return this.rq_sql;
         }
 
@@ -80,6 +86,12 @@ namespace hprc
         public string setIserrorByCode(int code)
         {
             this.rq_sql = "UPDATE Erreur SET iserror = '"  + 1 + "' WHERE code = '" + code +"';";
+            return this.rq_sql;
+        }
+
+        public string getErrorLine()
+        {
+            this.rq_sql = "SELECT erreur, solution FROM Erreur WHERE(iserror = '" + 1 + "');";
             return this.rq_sql;
         }
         public static Map_Error getInstance()

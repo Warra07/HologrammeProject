@@ -8,6 +8,10 @@ using System.Data;
 
 namespace hprc
 {
+    /* COUCHE PROCESSUS
+     * Classe du processus Texte, Processus contenant des methodes de gestion du
+     * tableau Texte, se référer à l'interface pour la description des methodes
+     */
    public class Prc_Text : IPrc_Text
     {
         private System.Data.DataSet oDs;

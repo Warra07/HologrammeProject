@@ -5,9 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hprc", "hprc\hprc.csproj", "{7DE365DE-17F1-4B1E-B7D4-50ED18D74C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{C041E073-87E1-4959-BB16-483877655287}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloManager", "HoloManager\HoloManager.csproj", "{6BD21174-C359-4519-A632-A688910FDB91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holochecker", "Holochecker\Holochecker.csproj", "{071D2627-36E5-4056-B3DB-AEBC189DAB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holodiffuze", "WpfApplication1\Holodiffuze.csproj", "{C30A62AA-13D4-4BF6-B938-F7A034333122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +21,18 @@ Global
 		{7DE365DE-17F1-4B1E-B7D4-50ED18D74C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DE365DE-17F1-4B1E-B7D4-50ED18D74C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DE365DE-17F1-4B1E-B7D4-50ED18D74C7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C041E073-87E1-4959-BB16-483877655287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C041E073-87E1-4959-BB16-483877655287}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C041E073-87E1-4959-BB16-483877655287}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C041E073-87E1-4959-BB16-483877655287}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6BD21174-C359-4519-A632-A688910FDB91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6BD21174-C359-4519-A632-A688910FDB91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BD21174-C359-4519-A632-A688910FDB91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BD21174-C359-4519-A632-A688910FDB91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071D2627-36E5-4056-B3DB-AEBC189DAB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071D2627-36E5-4056-B3DB-AEBC189DAB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071D2627-36E5-4056-B3DB-AEBC189DAB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071D2627-36E5-4056-B3DB-AEBC189DAB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30A62AA-13D4-4BF6-B938-F7A034333122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30A62AA-13D4-4BF6-B938-F7A034333122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30A62AA-13D4-4BF6-B938-F7A034333122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30A62AA-13D4-4BF6-B938-F7A034333122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

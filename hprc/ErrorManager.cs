@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace hprc
 {
+    /* COUCHE PROCSSUS
+     * Classe decorator permettant d'ajouter deux fonctionnalité à notre processur de gestion
+     * des erreurs qui sont la notification des erreurs en base donnée ainsi que la reinitialisation
+     * des erreurs, ces methodes ne sont utile qu'aux services de verification de performance
+     */
   public  class ErrorManager : IPrc_Error
     {
         private System.Data.DataSet oDs;
@@ -23,6 +28,10 @@ namespace hprc
             this.oCad = hprc.Metier.Work.getInstance();
             this.rq_sql = "NC";
         }
+
+        /* METHODE SIMILAIRE AU PROCESSUS ERREUR */
+
+
         public DataSet afficherError(string dataTableName)
         {
          return   prc.afficherError(dataTableName);
@@ -59,7 +68,18 @@ namespace hprc
         {
             return prc.RechercherCode(dataTableName, code);
         }
+        public DataSet getErrorLine(string dataTableName)
+        {
+            return prc.getErrorLine(dataTableName);
+        }
 
+        /* FIN DES METHODES SIMILAIRE AU PROCESSUS ERREUR */
+
+
+            
+           /* Methode permettant de reinitialisation la notification des erreurs avant d'effectuer
+             * une nouvelle verification
+             */
         public void errorReset()
         {
 
@@ -67,11 +87,16 @@ namespace hprc
             this.oCad.actionRows(this.rq_sql);
         }
 
+        /* 
+         * Methode permettant de notifier qu'une erreur à été detecté en initialisant la colonne iserror à 1
+         * pour l'erreur possédant le code d'erreur fourni en parametre
+         */
       public  void errorTrue(int code){
             this.rq_sql = this.oMap.setIserrorByCode(code);
             this.oCad.actionRows(this.rq_sql);
 
         }
-            
+
+        
     }
 }

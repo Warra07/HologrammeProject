@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApplication1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Window1" Height="683.651" Width="793.407" Loaded="Window_Loaded" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" Foreground="Black" Background="Black">
+    <Grid>
+        <Button x:Name="button" Content="Close" HorizontalAlignment="Right" Margin="530,457,0,0" VerticalAlignment="Bottom" Width="75" Height="27" Click="button_Click"/>
+        <Grid HorizontalAlignment="Center" Height="322" Margin="0,-6,0,0" VerticalAlignment="Center" Width="348">
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="-51,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.887"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="106,275,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180.467"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="247,143,-43,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.594"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="94,0,0,0" FontSize="35" Foreground="White"/>
+        </Grid>
+
+    </Grid>
+</Window>
