@@ -5,42 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Window1" Height="683.651" Width="793.407" Loaded="Window_Loaded" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" Foreground="Black" Background="Black">
+        Title="Window1" Height="811.481" Width="845.007" Loaded="Window_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" Foreground="Black" Background="Black">
     <Grid>
-        <Button x:Name="button" Content="Close" HorizontalAlignment="Right" Margin="530,457,0,0" VerticalAlignment="Bottom" Width="75" Height="27" Click="button_Click"/>
-        <Grid HorizontalAlignment="Center" Height="322" Margin="0,-6,0,0" VerticalAlignment="Center" Width="348">
-            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="-51,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+        <Button x:Name="button" Content="Close" HorizontalAlignment="Right" Margin="0,0,22.4,9.6" VerticalAlignment="Bottom" Width="75" Height="27" Click="button_Click"/>
+        <Grid HorizontalAlignment="Center" Height="336" Margin="0" VerticalAlignment="Center" Width="357">
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="-42,147,0,142" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="-89.887"/>
+                        <RotateTransform Angle="90.167"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="106,275,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="180.467"/>
+                        <RotateTransform Angle="359.436"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="247,143,-43,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Right" Margin="0,141,-36,134" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="35" Foreground="White">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="89.594"/>
+                        <RotateTransform Angle="269.985"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="94,0,0,0" FontSize="35" Foreground="White"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0" FontSize="35" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="540.418"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
         </Grid>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="152" Margin="12,311,0,318.6" VerticalAlignment="Center" Width="151" Source="wallpaper-695218_960_720.jpg" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.205"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="image_Copy" HorizontalAlignment="Right" Height="152" Margin="0,314,25.4,315.6" VerticalAlignment="Center" Width="151" Source="wallpaper-695218_960_720.jpg" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270.245"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="image_Copy1" HorizontalAlignment="Center" Height="152" Margin="344,0,343.4,23.6" VerticalAlignment="Bottom" Width="151" Source="wallpaper-695218_960_720.jpg" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="360.707"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="image_Copy2" HorizontalAlignment="Center" Height="152" Margin="346,20,341.4,0" VerticalAlignment="Top" Width="151" Source="wallpaper-695218_960_720.jpg" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180.249"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
     </Grid>
 </Window>

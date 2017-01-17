@@ -16,12 +16,16 @@ using hprc;
 using System.Data;
 using System.Collections;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace WpfApplication1
 {
    /* classe de la fenetre principal de l'application d diffusion */
     public partial class MainWindow : Window
     {
+
+
+        OpenFileDialog openfile;
         //Objet dataset contenant le resultat des requetes de selection
         private System.Data.DataSet oDs;
         //nom de la table dans le dataset
@@ -43,7 +47,8 @@ namespace WpfApplication1
             diffusion = new Window1();
             diffusion.Hide();
            dt = new DataTable();
-
+            openfile = new OpenFileDialog();
+           
             this.oPcs = (IPrc_Text)PrcFactory.getProcess("texte");
             this.oPce = (IPrc_Error)PrcFactory.getProcess("error");
             this.dataTableName = "ALLTexte";
@@ -58,6 +63,7 @@ namespace WpfApplication1
         private void MyWindow_Loaded(object sender, RoutedEventArgs e)
         {
            MyWipedText.Visibility = Visibility.Hidden;
+            mainimage.Visibility = Visibility.Hidden;
             listBox.Items.Clear();
             this.oDs = this.oPcs.afficher(dataTableName);
 
@@ -77,6 +83,8 @@ namespace WpfApplication1
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MyWipedText.Visibility = Visibility.Visible;
+            mainimage.Visibility = Visibility.Hidden;
             this.oDs = this.oPcs.afficher(dataTableName);
             dt = oDs.Tables["ALLTexte"];
             foreach (DataRow dr in dt.Rows)
@@ -106,7 +114,9 @@ namespace WpfApplication1
             string errors = "";
             foreach (DataRow dr in dt.Rows)   {    i++;
               errors += dr["erreur"].ToString() + " : " + dr["solution"].ToString() +"\n";  }
-           if( i == 0)  {    diffusion.Show(); } else   {  MessageBox.Show(errors);  }
+           if( i == 0)  {
+
+                diffusion.Show(); } else   {  MessageBox.Show(errors);  }
         }
 
 
@@ -128,5 +138,14 @@ namespace WpfApplication1
         private void listBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e) { }
 
         private void listBox_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e) { }
+
+        private void importer_Click(object sender, RoutedEventArgs e)
+        {
+            MyWipedText.Visibility = Visibility.Hidden;
+            openfile.ShowDialog();
+           mainimage.Source = new BitmapImage(new Uri(openfile.FileName));
+            diffusion.showimages(openfile.FileName);
+            mainimage.Visibility = Visibility.Visible;
+        }
     }
 }
